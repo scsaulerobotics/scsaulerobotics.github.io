@@ -1,0 +1,271 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>SCSAULE Robotics | Innovación en Robótica ULe</title>
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600&display=swap" rel="stylesheet">
+    <style>
+        :root {
+            --bg-color: #050505;
+            --card-bg: #0f0f0f;
+            --text-main: #f2f2f2;
+            --text-muted: #999999;
+            --accent-color: #00f2ff; /* Cian eléctrico Robótico */
+            --accent-hover: #00c8d4;
+            --border-muted: #1a1a1a;
+            --animation-speed: 0.7s;
+        }
+
+        * {
+            box-sizing: border-box;
+            margin: 0;
+            padding: 0;
+        }
+
+        body {
+            font-family: 'Inter', sans-serif;
+            background-color: var(--bg-color);
+            color: var(--text-main);
+            line-height: 1.6;
+            padding: 2rem;
+            opacity: 0;
+            animation: fadeInBody 1s ease-out forwards;
+        }
+
+        main {
+            max-width: 720px;
+            margin: 4rem auto;
+        }
+
+        @keyframes fadeInBody { to { opacity: 1; } }
+        @keyframes slideInUp {
+            from { opacity: 0; transform: translateY(30px); }
+            to { opacity: 1; transform: translateY(0); }
+        }
+
+        header, section, footer {
+            opacity: 0;
+            animation: slideInUp var(--animation-speed) ease-out forwards;
+        }
+
+        header { animation-delay: 0.1s; margin-bottom: 5rem; text-align: center;}
+        section:nth-of-type(1) { animation-delay: 0.3s; }
+        section:nth-of-type(2) { animation-delay: 0.5s; }
+        footer { animation-delay: 0.7s; }
+
+        .badge-robot {
+            display: inline-block;
+            padding: 0.4rem 1rem;
+            background: rgba(0, 242, 255, 0.1);
+            color: var(--accent-color);
+            border-radius: 50px;
+            font-size: 0.75rem;
+            font-weight: 600;
+            letter-spacing: 0.1em;
+            margin-bottom: 1.5rem;
+            border: 1px solid rgba(0, 242, 255, 0.2);
+        }
+
+        h1 {
+            font-size: 2.5rem;
+            font-weight: 700;
+            margin-bottom: 1rem;
+            letter-spacing: -0.05em;
+        }
+
+        .bio {
+            color: var(--text-muted);
+            font-size: 1.1rem;
+            max-width: 600px;
+            margin: 0 auto 1.5rem auto;
+        }
+
+        .github-link {
+            color: var(--accent-color);
+            text-decoration: none;
+            font-weight: 500;
+            border-bottom: 1px solid transparent;
+            transition: all 0.3s;
+        }
+
+        .github-link:hover { border-bottom-color: var(--accent-color); }
+
+        section { margin-bottom: 5rem; }
+
+        h2 {
+            font-size: 0.85rem;
+            font-weight: 600;
+            color: var(--text-muted);
+            margin-bottom: 2.5rem;
+            text-transform: uppercase;
+            letter-spacing: 0.2em;
+            display: flex;
+            align-items: center;
+            gap: 1rem;
+        }
+
+        h2::after {
+            content: "";
+            height: 1px;
+            flex-grow: 1;
+            background: var(--border-muted);
+        }
+
+        .project-grid {
+            display: flex;
+            flex-direction: column;
+            gap: 1.2rem;
+        }
+
+        .project-card {
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            padding: 1.8rem;
+            background-color: var(--card-bg);
+            border: 1px solid var(--border-muted);
+            border-radius: 16px;
+            text-decoration: none;
+            color: inherit;
+            transition: all 0.4s cubic-bezier(0.165, 0.84, 0.44, 1);
+        }
+
+        .project-card:hover {
+            transform: scale(1.02);
+            border-color: var(--accent-color);
+            box-shadow: 0 10px 40px rgba(0, 242, 255, 0.05);
+        }
+
+        .project-title {
+            font-weight: 600;
+            font-size: 1.2rem;
+            display: block;
+            margin-bottom: 0.4rem;
+        }
+
+        .project-desc {
+            color: var(--text-muted);
+            font-size: 0.95rem;
+            display: block;
+        }
+
+        .project-lang {
+            font-size: 0.75rem;
+            font-weight: 700;
+            color: #000;
+            background: var(--accent-color);
+            padding: 0.4rem 0.9rem;
+            border-radius: 6px;
+            text-transform: uppercase;
+        }
+
+        .tech-list {
+            display: flex;
+            flex-wrap: wrap;
+            gap: 0.8rem;
+        }
+
+        .tech-tag {
+            font-size: 0.85rem;
+            padding: 0.6rem 1.2rem;
+            border-radius: 12px;
+            background: #111;
+            border: 1px solid var(--border-muted);
+            color: var(--text-muted);
+            transition: 0.3s;
+        }
+
+        .tech-tag:hover {
+            color: var(--accent-color);
+            border-color: var(--accent-color);
+            background: rgba(0, 242, 255, 0.05);
+        }
+
+        footer {
+            margin-top: 8rem;
+            padding-bottom: 4rem;
+            text-align: center;
+            border-top: 1px solid var(--border-muted);
+            padding-top: 3rem;
+        }
+
+        .social-footer {
+            margin-top: 1.5rem;
+            display: flex;
+            justify-content: center;
+            gap: 2rem;
+        }
+
+        @media (max-width: 650px) {
+            .project-card { flex-direction: column; align-items: flex-start; gap: 1.5rem; }
+            h1 { font-size: 2rem; }
+        }
+    </style>
+</head>
+<body>
+
+    <main>
+        <header>
+            <span class="badge-robot">LABORATORIO DE ROBÓTICA</span>
+            <h1>SCSAULE Robotics</h1>
+            <p class="bio">
+                Rama especializada en <strong>robótica autónoma y sistemas embebidos</strong> de la organización estudiantil de la Universidad de León.
+            </p>
+            <a href="https://github.com/scsaulerobotics" target="_blank" class="github-link">github.com/scsaulerobotics →</a>
+        </header>
+
+        <section>
+            <h2>Sistemas y Control</h2>
+            <div class="project-grid">
+
+                <a href="https://github.com/scsaulerobotics/Robot-Control" target="_blank" class="project-card">
+                    <div class="project-info">
+                        <span class="project-title">Robot Control System</span>
+                        <span class="project-desc">Arquitectura de control para robots móviles basada en microcontroladores.</span>
+                    </div>
+                    <div class="project-meta">
+                        <span class="project-lang">C++</span>
+                    </div>
+                </a>
+
+                <a href="https://github.com/scsaulerobotics/Computer-Vision" target="_blank" class="project-card">
+                    <div class="project-info">
+                        <span class="project-title">Computer Vision Modules</span>
+                        <span class="project-desc">Detección de objetos y navegación visual mediante OpenCV.</span>
+                    </div>
+                    <div class="project-meta">
+                        <span class="project-lang">Python</span>
+                    </div>
+                </a>
+
+            </div>
+        </section>
+
+        <section>
+            <h2>Stack Tecnológico</h2>
+            <div class="tech-list">
+                <span class="tech-tag">ROS 2</span>
+                <span class="tech-tag">C++ / Arduino</span>
+                <span class="tech-tag">Python (OpenCV)</span>
+                <span class="tech-tag">Raspberry Pi</span>
+                <span class="tech-tag">Esp32</span>
+                <span class="tech-tag">Lidar Systems</span>
+                <span class="tech-tag">PCB Design</span>
+            </div>
+        </section>
+
+        <footer>
+            <p>© 2026 SCSAULE Robotics • ULe</p>
+            <div class="social-footer">
+                <a href="https://github.com/scsaulerobotics" class="github-link">GitHub</a>
+                <a href="#" class="github-link">Instagram</a>
+                <a href="#" class="github-link">LinkedIn</a>
+            </div>
+        </footer>
+    </main>
+
+</body>
+</html>
